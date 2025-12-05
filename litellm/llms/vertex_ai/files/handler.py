@@ -173,7 +173,7 @@ class VertexAIFilesHandler(GCSBucketBase):
         )
 
         download_kwargs = {
-            "standard_callback_dynamic_params": {"gcs_bucket_name": bucket_name}
+            "standard_callback_dynamic_params": {"gcs_bucket_name": bucket_name, "gcs_path_service_account" : vertex_credentials}
         }
 
         file_content = await self.download_gcs_object(
